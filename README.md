@@ -41,9 +41,9 @@ export const links: NavLinks[] = [
 ## EP 5 Clerk Authentication
 ```plaintext
 Clerk จัดการผู้ใช้งาน
-https://clerk.com/
----- Middleware ----
-https://clerk.com/docs/references/nextjs/clerk-middleware
+[Clerk Official Website](https://clerk.com/)
+# Middleware
+[Clerk Middleware Documentation](https://clerk.com/docs/references/nextjs/clerk-middleware)
 ```
 
 ## สู้ๆ ครับทุกๆ คน
