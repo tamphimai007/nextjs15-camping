@@ -61,4 +61,9 @@ npx shadcn@latest add toast
 7. connect db (supabase)
 8. insert to db (supabase)
 ```
+https://clerk.com/docs/deployments/clerk-environment-variables#sign-in-and-sign-up-redirects
+```env
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL='/profile/create'
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL='/profile/create'
+```
 ## สู้ๆ ครับทุกๆ คน
