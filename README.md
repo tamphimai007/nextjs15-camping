@@ -45,5 +45,20 @@ https://clerk.com/
 ---- Middleware ----
 https://clerk.com/docs/references/nextjs/clerk-middleware
 ```
+## EP 6 Toast & SignIn, SignOut
+```tsx
+npx shadcn@latest add toast
+```
 
+## EP 7 Form
+```plaintext
+1. form
+2. Action
+3. แยก components
+4. Props, types
+5. Send to Server action
+6. Validate with zod
+7. connect db (supabase)
+8. insert to db (supabase)
+```
 ## สู้ๆ ครับทุกๆ คน
