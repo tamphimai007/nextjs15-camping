@@ -1,3 +1,4 @@
+import { SubmitButton } from "@/components/form/Buttons";
 import FormInput from "@/components/form/FormInput";
 import { Button } from "@/components/ui/button";
 
@@ -21,9 +22,7 @@ const CreateProfile = () => {
           <FormInput name="lastName" label="Last Name" type="text" placeholder="Last Name"/>
           <FormInput name="userName" label="Username" type="text" placeholder="Username" />
           </div>
-          <Button type="submit" size="lg">
-            Create Profile
-          </Button>
+          <SubmitButton text="create profile" size='lg' />
         </form>
       </div>
     </section>
