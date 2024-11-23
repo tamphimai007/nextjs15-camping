@@ -102,6 +102,57 @@ export default FormInput;
 
 ## EP9 Buttons
 
+## EP 10
 
+# Step 1 FormContainer.tsx  แยก file
+
+```tsx 
+"use client";
+const FormContainer = ({ action, children }) => {
+  return <form action={action}>{children}</form>;
+};
+export default FormContainer;
+```
+
+# Step 2 FormContainer.tsx เพิ่ม useActionState
+```tsx 
+"use client";
+import { useActionState } from "react";
+const initialState = {
+  message: "",
+};
+
+const FormContainer = ({ action, children }) => {
+  const [state, formAction] = useActionState(action, initialState);
+
+  return <form action={formAction}>{children}</form>;
+};
+export default FormContainer;
+```
+
+# Step 3 FormContainer.tsx กำหนด Type
+```tsx 
+"use client";
+import { useActionState } from "react";
+
+const initialState = {
+  message: "",
+};
+type actionFunction = (
+    prevState: any,
+    formData: FormData
+  ) => Promise<{ message: string }>;
+  
+const initialState = {
+  message: "",
+};
+
+const FormContainer = ({ action, children }) => {
+  const [state, formAction] = useActionState(action, initialState);
+
+  return <form action={formAction}>{children}</form>;
+};
+export default FormContainer;
+```
 
 ## สู้ๆ ครับทุกๆ คน

@@ -21,9 +21,7 @@ export const SubmitButton = ({ className, size, text }: SubmitButtonProps) => {
       size={size}
       className={`${className} capitalize`}
     >
-      {pending 
-      ? <RotateCw className="animate-spin" /> 
-      : <p>{text}</p>}
+      {pending ? <RotateCw className="animate-spin" /> : <p>{text}</p>}
     </Button>
   );
 };
