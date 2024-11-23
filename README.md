@@ -104,7 +104,7 @@ export default FormInput;
 
 ## EP 10
 
-# Step 1 FormContainer.tsx  แยก file
+### Step 1 FormContainer.tsx  แยก file
 
 ```tsx 
 "use client";
@@ -114,7 +114,7 @@ const FormContainer = ({ action, children }) => {
 export default FormContainer;
 ```
 
-# Step 2 FormContainer.tsx เพิ่ม useActionState
+### Step 2 FormContainer.tsx เพิ่ม useActionState
 ```tsx 
 "use client";
 import { useActionState } from "react";
@@ -130,7 +130,7 @@ const FormContainer = ({ action, children }) => {
 export default FormContainer;
 ```
 
-# Step 3 FormContainer.tsx กำหนด Type
+### Step 3 FormContainer.tsx กำหนด Type
 ```tsx 
 "use client";
 import { useActionState } from "react";
