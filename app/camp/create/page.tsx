@@ -25,6 +25,7 @@ const CreateProfile = async() => {
 
           {/* Category */}
           <CategoryInput />
+          
           </div>
 
           <SubmitButton text="create Landmark" size='lg' />
