@@ -264,4 +264,51 @@ https://clerk.com/docs/references/nextjs/current-user
 https://clerk.com/docs/users/metadata
 ```
 
+## EP 15 Landmark
+
+## EP 16 Categories
+```ts
+import {
+  Tent,
+  House,
+  Mountain,
+  Store,
+  Utensils,
+  Hotel,
+  Bed,
+} from "lucide-react";
+
+export const categories= [
+  {
+    label: "camping",
+    icon: Tent,
+  },
+  {
+    label: "house",
+    icon: House,
+  },
+  {
+    label: "hotel",
+    icon: Hotel,
+  },
+  {
+    label: "hostel",
+    icon: Bed,
+  },
+  {
+    label: "moutain",
+    icon: Mountain,
+  },
+  {
+    label: "store",
+    icon: Store,
+  },
+  {
+    label: "food",
+    icon: Utensils,
+  },
+];
+
+```
+
 ## สู้ๆ ครับทุกๆ คน

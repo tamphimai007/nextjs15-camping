@@ -1,5 +1,6 @@
 import { createLandmarkAction } from "@/actions/actions";
 import { SubmitButton } from "@/components/form/Buttons";
+import CategoryInput from "@/components/form/CategoryInput";
 import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
 import { currentUser } from "@clerk/nextjs/server";
@@ -21,7 +22,11 @@ const CreateProfile = async() => {
             label="Landmark Name" 
             type="text" 
             placeholder="Landmark Name" />
+
+          {/* Category */}
+          <CategoryInput />
           </div>
+
           <SubmitButton text="create Landmark" size='lg' />
         </FormContainer>
         
