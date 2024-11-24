@@ -253,4 +253,15 @@ npx prisma db push
 npx prisma studio
 ```
 
+## EP 13 Supabase & Prisma
+```plaintext
+
+```
+
+## EP 14 Create Profile
+```plaintext
+https://clerk.com/docs/references/nextjs/current-user
+https://clerk.com/docs/users/metadata
+```
+
 ## สู้ๆ ครับทุกๆ คน
