@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Profile {
+  id           String     @id @default(uuid())
+  clerkId      String     @unique
+  firstName    String
+  lastName     String
+  username     String
+  email        String
+  profileImage String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  landmarks    Landmark[]
+  favorites    Favorite[]
+}
+
+model Landmark {
+  id          String     @id @default(uuid())
+  name        String
+  description String
+  category    String
+  image       String
+  province    String
+  lat         Float
+  lng         Float
+  price       Int
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  profile     Profile    @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profileId   String
+  favorites   Favorite[]
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  profile   Profile @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profileId String
+
+  landmark   Landmark @relation(fields: [landmarkId], references: [id], onDelete: Cascade)
+  landmarkId String
+}
