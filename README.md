@@ -396,4 +396,14 @@ export const provinces = [
 ];
 ```
 
+
+## EP 18
+```tsx
+const iconUrl =
+  "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png";
+const markerIcon = L.icon({
+  iconUrl: iconUrl,
+  iconSize: [20, 30],
+});
+```
 ## สู้ๆ ครับทุกๆ คน

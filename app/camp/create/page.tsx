@@ -35,7 +35,7 @@ const CreateProfile = async () => {
               type="number"
               placeholder="Price"
             />
-            
+
             <ProvinceInput />
           </div>
 
