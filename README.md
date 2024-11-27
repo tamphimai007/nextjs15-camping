@@ -428,7 +428,9 @@ export const landmarkSchema = z.object({
 ```
 ## EP 21 Upload file to Supabase
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/supabase-
+or
+npm install @supabase/supabase-js --legacy-peer-deps
 ```
 ```plaintext
 https://supabase.com/docs/guides/storage/uploads/standard-uploads
