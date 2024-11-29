@@ -438,5 +438,6 @@ https://supabase.com/docs/guides/storage/uploads/standard-uploads
 ## EP 22 Fetch Data
 ## EP 23 Card
 ## EP 24 Card Detail
-## EP 25 Favorite button
+## EP 25 Favorite Button
+## EP 26 SignIn Button
 ## สู้ๆ ครับทุกๆ คน
