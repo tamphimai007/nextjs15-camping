@@ -435,4 +435,8 @@ npm install @supabase/supabase-js --legacy-peer-deps
 ```plaintext
 https://supabase.com/docs/guides/storage/uploads/standard-uploads
 ```
+## EP 22 Fetch Data
+## EP 23 Card
+## EP 24 Card Detail
+## EP 25 Favorite button
 ## สู้ๆ ครับทุกๆ คน

@@ -6,6 +6,7 @@ export type actionFunction = (
 export type LandmarkCardProps = {
   id: string;
   name: string;
+  description:string;
   image: string;
   category: string;
   province: string;
