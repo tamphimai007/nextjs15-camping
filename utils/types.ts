@@ -6,7 +6,7 @@ export type actionFunction = (
 export type LandmarkCardProps = {
   id: string;
   name: string;
-  description:string;
+  description: string;
   image: string;
   category: string;
   province: string;
@@ -14,3 +14,12 @@ export type LandmarkCardProps = {
   lat: number;
   lng: number;
 };
+
+export type CurrentSlideData = {
+  data: LandmarkCardProps;
+  index: number;
+};
+// export type CurrentSlideData = {
+//   data: LandmarkCardProps;
+//   // index: number;
+// };

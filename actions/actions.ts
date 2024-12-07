@@ -38,7 +38,7 @@ export const createProfileAction = async (
 
     const rawData = Object.fromEntries(formData);
     const validateField = validateWithZod(profileSchema, rawData);
-    console.log("validated", validateField);
+    // console.log("validated", validateField);
 
     await db.profile.create({
       data: {
@@ -77,7 +77,7 @@ export const createLandmarkAction = async (
 
     // Step 2 Upload Image to Supabase
     const fullPath = await uploadFile(validatedFile.image);
-    console.log(fullPath);
+    // console.log(fullPath);
     // Step 3 Insert to DB
     await db.landmark.create({
       data: {
@@ -94,17 +94,36 @@ export const createLandmarkAction = async (
   redirect("/");
 };
 
-export const fetchLandmarks = async () =>
-  // search
-  {
-    // code body
-    const landmarks = await db.landmark.findMany({
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-    return landmarks;
-  };
+export const fetchLandmarks = async ({
+  search = "",
+  category,
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  const landmarks = await db.landmark.findMany({
+    where: {
+      category,
+      OR: [
+        { name: { contains: search, mode: "insensitive" } },
+        { description: { contains: search, mode: "insensitive" } },
+      ],
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return landmarks;
+};
+export const fetchLandmarksHero = async () => {
+  const landmarks = await db.landmark.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+    take: 5,
+  });
+  return landmarks;
+};
 
 export const fetchFavoriteId = async ({
   landmarkId,
@@ -157,27 +176,41 @@ export const toggleFavoriteAction = async (prevState: {
   }
 };
 
-export const fetchFavorits =  async()=>{
-  const user = await getAuthUser()
+export const fetchFavorits = async () => {
+  const user = await getAuthUser();
   const favorites = await db.favorite.findMany({
-    where:{
-      profileId: user.id
+    where: {
+      profileId: user.id,
     },
-    select:{
-      landmark:{
-        select:{
-          id:true,
-          name:true,
-          description:true,
-          image:true,
-          price:true,
-          province:true,
-          lat:true,
-          lng:true,
-          category:true
-        }
-      }
+    select: {
+      landmark: {
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          image: true,
+          price: true,
+          province: true,
+          lat: true,
+          lng: true,
+          category: true,
+        },
+      },
+    },
+  });
+  return favorites.map((favorite) => favorite.landmark);
+};
+
+
+
+export const fetchLandmarkDetail = async({id}:{id:string})=>{
+  // code body
+  return db.landmark.findFirst({
+    where:{
+      id
+    },
+    include:{
+      profile:true
     }
   })
-  return favorites.map((favorite)=>favorite.landmark)
 }

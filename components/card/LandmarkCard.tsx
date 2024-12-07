@@ -2,12 +2,15 @@ import Image from "next/image";
 import { LandmarkCardProps } from "@/utils/types";
 import LandmarkRating from "./LandmarkRating";
 import FavoriteToggleButton from "./FavoriteToggleButton";
+import Link from "next/link";
 
 const LandmarkCard = ({ landmark }: { landmark: LandmarkCardProps }) => {
   const { name, image, id,description,price,
      province, lat, lng, category } = landmark;
   return (
     <article className="group relative">
+      <Link href={`/landmark/${id}`}>
+      
       <div className="relative h-[300px] rounded-md mb-2">
         <Image
           src={image}
@@ -34,11 +37,11 @@ const LandmarkCard = ({ landmark }: { landmark: LandmarkCardProps }) => {
           <span>THB {price}</span>
           <p>{province}</p>
       </div>
+      </Link>
 
       <div className="absolute top-5 right-5">
         <FavoriteToggleButton landmarkId={id}/>
       </div>
-
     </article>
   );
 };
